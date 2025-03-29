@@ -49,3 +49,31 @@ class TabTransformer(nn.Module):
         logits = self.classifier(x)
         
         return logits
+        
+    def get_attention_weights(self, x):
+        """
+        获取Transformer编码器的注意力权重
+        Args:
+            x: 输入张量 [batch_size, input_dim]
+        Returns:
+            注意力权重张量 [batch_size, num_heads, seq_len, seq_len]
+        """
+        # 特征嵌入
+        x = self.feature_embedding(x)
+        
+        # 添加序列维度
+        if len(x.shape) == 2:
+            x = x.unsqueeze(1)  # [batch_size, 1, dim_model]
+        
+        # 获取所有编码器层的注意力权重
+        attention_weights = []
+        for layer in self.transformer_encoder.layers:
+            # 通过self_attn获取注意力权重
+            attn_output, attn_weights = layer.self_attn(
+                x, x, x,
+                need_weights=True
+            )
+            attention_weights.append(attn_weights)
+        
+        # 返回最后一层的注意力权重
+        return attention_weights[-1]

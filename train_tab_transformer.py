@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import KFold
 from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
 from models.tab_transformer import TabTransformer
 
 def train_model(model, train_loader, val_loader, criterion, optimizer, device, num_epochs=100, patience=10):
@@ -56,25 +56,37 @@ def evaluate_model(model, test_loader, device):
     model.eval()
     all_preds = []
     all_labels = []
+    all_probs = []
+    all_attentions = []
     
     with torch.no_grad():
         for batch_x, batch_y in test_loader:
             batch_x = batch_x.to(device)
             outputs = model(batch_x)
+            probs = torch.nn.functional.softmax(outputs, dim=1)
             _, predicted = torch.max(outputs.data, 1)
             all_preds.extend(predicted.cpu().numpy())
             all_labels.extend(batch_y.numpy())
+            all_probs.extend(probs.cpu().numpy())
+            
+            # 提取注意力权重
+            if hasattr(model, 'get_attention_weights'):
+                attention_weights = model.get_attention_weights(batch_x)
+                all_attentions.append(attention_weights.cpu().numpy())
     
     accuracy = accuracy_score(all_labels, all_preds)
     precision = precision_score(all_labels, all_preds, average='macro')
     recall = recall_score(all_labels, all_preds, average='macro')
     f1 = f1_score(all_labels, all_preds, average='macro')
+    roc_auc = roc_auc_score(all_labels, all_probs, multi_class='ovr')
     
     return {
         'accuracy': accuracy,
         'precision': precision,
         'recall': recall,
-        'f1_score': f1
+        'f1_score': f1,
+        'roc_auc': roc_auc,
+        'attention_weights': np.concatenate(all_attentions, axis=0) if len(all_attentions) > 0 else None
     }
 
 def main():
