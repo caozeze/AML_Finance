@@ -47,7 +47,7 @@ def train_model(model, train_loader, val_loader, criterion, optimizer, device, n
                 print(f'Early stopping at epoch {epoch}')
                 break
 
-        if (epoch + 1) % 10 == 0:
+        if (epoch + 1) % 10 == 0 or epoch == 0:
             print(f'Epoch [{epoch+1}/{num_epochs}], Train Loss: {train_loss/len(train_loader):.4f}, Val Loss: {val_loss/len(val_loader):.4f}')
 
     return best_model_state
@@ -66,9 +66,9 @@ def evaluate_model(model, test_loader, device):
             all_labels.extend(batch_y.numpy())
     
     accuracy = accuracy_score(all_labels, all_preds)
-    precision = precision_score(all_labels, all_preds)
-    recall = recall_score(all_labels, all_preds)
-    f1 = f1_score(all_labels, all_preds)
+    precision = precision_score(all_labels, all_preds, average='macro')
+    recall = recall_score(all_labels, all_preds, average='macro')
+    f1 = f1_score(all_labels, all_preds, average='macro')
     
     return {
         'accuracy': accuracy,
@@ -78,24 +78,28 @@ def evaluate_model(model, test_loader, device):
     }
 
 def main():
+    seed = 42
+    np.random.seed(seed)
+    torch.manual_seed(seed)
     # 设置设备
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     
     # 加载数据
-    train_data = pd.read_csv('data/clean_train.csv')
-    test_data = pd.read_csv('data/clean_test.csv')
+    train_data = pd.read_csv('./data/clean_train.csv')
+    # test_data = pd.read_csv('./data/clean_test.csv')
     
     # 准备特征和标签
     features = train_data.drop(['credit_score','Unnamed: 0'], axis=1)
     labels = train_data['credit_score']
-    
-    # # 检查并处理非数值类型的列
-    # for column in features.columns:
-    #     if features[column].dtype == 'object':
-    #         features[column] = pd.to_numeric(features[column], errors='coerce')
-    
-    # # 处理可能的NaN值
-    # features = features.fillna(features.mean())
+
+    for column in features.columns:
+        # 检查是否为对象类型
+        if features[column].dtype == 'object':
+            # 尝试转换为数值类型
+            features[column] = pd.to_numeric(features[column], errors='coerce')
+        # 检查是否为布尔类型
+        elif features[column].dtype == 'bool':
+            features[column] = features[column].astype(int)
     
     # 转换为PyTorch张量
     X = torch.FloatTensor(features.values)
@@ -118,11 +122,11 @@ def main():
         # 准备数据加载器
         train_loader = torch.utils.data.DataLoader(
             torch.utils.data.TensorDataset(X[train_ids], y[train_ids]),
-            batch_size=32, shuffle=True
+            batch_size=128, num_workers=8, shuffle=True
         )
         val_loader = torch.utils.data.DataLoader(
             torch.utils.data.TensorDataset(X[val_ids], y[val_ids]),
-            batch_size=32
+            batch_size=128, num_workers=8, 
         )
         
         # 初始化模型
@@ -142,6 +146,19 @@ def main():
         print(f'Fold {fold + 1} Results:')
         for metric, value in fold_result.items():
             print(f'{metric}: {value:.4f}')
+
+        # 保存模型和评估结果
+        model_save_path = f'./models/tab_transformer_fold_{fold+1}_f1_{fold_result["f1_score"]:.4f}.pth'
+        torch.save({
+            'model_state_dict': best_model_state,
+            'model_config': {
+                'input_dim': input_dim,
+                'num_classes': num_classes
+            },
+            'metrics': fold_result,
+            'fold': fold + 1
+        }, model_save_path)
+        print(f'模型已保存到: {model_save_path}')
     
     # 计算平均结果
     avg_results = {}

@@ -34,6 +34,10 @@ class TabTransformer(nn.Module):
     def forward(self, x):
         # 特征嵌入
         x = self.feature_embedding(x)
+
+        # 添加序列维度
+        if len(x.shape) == 2:
+            x = x.unsqueeze(1)  # [batch_size, 1, dim_model]
         
         # Transformer编码
         x = self.transformer_encoder(x)
