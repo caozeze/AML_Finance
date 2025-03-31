@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 class TabTransformer(nn.Module):
-    def __init__(self, input_dim, num_classes=2, num_heads=4, num_layers=2, dim_model=64, dim_ff=128, dropout=0.1):
+    def __init__(self, input_dim, num_classes=3, num_heads=4, num_layers=2, dim_model=64, dim_ff=128, dropout=0.1):
         super(TabTransformer, self).__init__()
         
         self.input_dim = input_dim
