@@ -9,32 +9,25 @@ class MLP(nn.Module):
         self.input_dim = input_dim
         self.num_classes = num_classes
         
-        # 构建MLP层
+        # Construct the MLP layers
         layers = []
         prev_dim = input_dim
         
-        # 添加隐藏层
+        # Add Hidden layers
         for hidden_dim in hidden_dims:
             layers.append(nn.Linear(prev_dim, hidden_dim))
             layers.append(nn.ReLU())
             layers.append(nn.Dropout(dropout))
             prev_dim = hidden_dim
         
-        # 添加输出层
+        # Output layer
         layers.append(nn.Linear(prev_dim, num_classes))
         
-        # 将所有层组合成一个序列
+        # Combine all layers into a Sequential model
         self.model = nn.Sequential(*layers)
     
     def forward(self, x):
-        # 直接通过MLP网络
         return self.model(x)
     
     def get_attention_weights(self, x):
-        """为了与TabTransformer接口兼容，返回None
-        Args:
-            x: 输入张量 [batch_size, input_dim]
-        Returns:
-            None，因为MLP没有注意力机制
-        """
         return None
