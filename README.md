@@ -6,19 +6,19 @@ This repository contains the full codebase and resources for the COMP0162 projec
 
 ```
 .
-├── data/                          # Raw and preprocessed dataset files (not included)
-├── models/                        # Saved model weights
-├── shap/                          # SHAP analysis outputs
-├── resources/                     # Helper functions or external scripts
-├── 1_eda.ipynb                                    # Exploratory Data Analysis
-├── 2_over_sampling.ipynb                          # Random Oversampling & SMOTE
-├── 3_standardisation_and_multicollinearity_check.ipynb   # Z-score + VIF
-├── 4_baseline_model_training.ipynb               # LR & XGBoost training
-├── 5_train_mlp_transformer.ipynb                 # MLP & Transformer training
-├── 6_statistical_test.ipynb                      # Wilcoxon significance tests
-├── 7_explanability.ipynb                          # SHAP feature attribution
+├── data/                                        			# Raw and preprocessed dataset files 
+├── models/                        							# Saved model weights
+├── shap/                          							# SHAP analysis outputs
+├── resources/                     							# Helper functions or external scripts
+├── 1_eda.ipynb                                    			# Exploratory Data Analysis
+├── 2_over_sampling.ipynb                          			# Random Oversampling & SMOTE
+├── 3_standardisation_and_multicollinearity_check.ipynb 	# Z-score + VIF
+├── 4_baseline_model_training.ipynb               			# LR & XGBoost training
+├── 5_train_mlp_transformer.ipynb                 			# MLP & Transformer training
+├── 6_statistical_test.ipynb                      			# Wilcoxon significance tests
+├── 7_explanability.ipynb                         			# SHAP feature attribution
 ├── .gitignore
-└── best_impute_model_weights.pth                 # Model checkpoint (if applicable)
+└── best_impute_model_weights.pth                			# Model checkpoint (if applicable)
 ```
 
 ## 🚀 How to Run
