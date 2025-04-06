@@ -1,0 +1,277 @@
+feature,importance,model
+credit_mix,0.4904146188897525,Logistic Regression
+interest_rate,0.20120814293895456,Logistic Regression
+changed_credit_limit,0.18084931546236038,Logistic Regression
+delay_from_due_date,0.1638145167252853,Logistic Regression
+num_credit_inquiries,0.14129165316583556,Logistic Regression
+num_credit_card,0.12975751650653622,Logistic Regression
+outstanding_debt,0.11715810675590926,Logistic Regression
+spending_level,0.10388448124494319,Logistic Regression
+payment_of_min_amount,0.07429079871508687,Logistic Regression
+num_of_delayed_payment,0.058072155441835686,Logistic Regression
+month,0.056858324355491735,Logistic Regression
+amount_invested_monthly,0.055967330633403825,Logistic Regression
+payment_size,0.051283797396280965,Logistic Regression
+credit_history_age_in_month,0.04771027173577275,Logistic Regression
+monthly_balance,0.041686210097577364,Logistic Regression
+personal_loan,0.03476340787592727,Logistic Regression
+occupation_Scientist,0.03263154700283968,Logistic Regression
+age,0.026652499747519882,Logistic Regression
+monthly_inhand_salary,0.02651593166349765,Logistic Regression
+num_bank_accounts,0.026464803987026622,Logistic Regression
+auto_loan,0.025894522814547894,Logistic Regression
+occupation_Writer,0.02482627581216981,Logistic Regression
+not_specified,0.023451020866643104,Logistic Regression
+occupation_Mechanic,0.021571600279306158,Logistic Regression
+debt_consolidation_loan,0.020680576914818453,Logistic Regression
+student_loan,0.018431994986076228,Logistic Regression
+occupation_Media_Manager,0.017340396095362358,Logistic Regression
+occupation_Entrepreneur,0.01673852027852475,Logistic Regression
+occupation_Manager,0.016718566980559752,Logistic Regression
+num_of_loan,0.016499012609300805,Logistic Regression
+occupation_Accountant,0.015341104045559991,Logistic Regression
+occupation_Engineer,0.015185618894995766,Logistic Regression
+occupation_Lawyer,0.014629321590643332,Logistic Regression
+credit_builder_loan,0.011853900953323119,Logistic Regression
+occupation_Architect,0.011765420348232115,Logistic Regression
+mortgage_loan,0.011717168276773823,Logistic Regression
+occupation_Musician,0.011244827239065213,Logistic Regression
+occupation_Teacher,0.009864741599687392,Logistic Regression
+payday_loan,0.009590136311943253,Logistic Regression
+occupation_Doctor,0.009020775516454933,Logistic Regression
+occupation_Developer,0.008787367746569148,Logistic Regression
+occupation_Journalist,0.007595286891224476,Logistic Regression
+credit_utilization_ratio,0.00726411809610527,Logistic Regression
+home_equity_loan,0.005788399488273801,Logistic Regression
+total_emi_per_month,0.0012438651527229214,Logistic Regression
+annual_income,0.0006856052073225894,Logistic Regression
+credit_mix,0.5556172832681956,XGBoost
+month,0.38030089794391275,XGBoost
+interest_rate,0.3697440501901832,XGBoost
+outstanding_debt,0.3103471009757538,XGBoost
+delay_from_due_date,0.2089044188198783,XGBoost
+monthly_inhand_salary,0.13863552156396267,XGBoost
+num_credit_card,0.11802014979745958,XGBoost
+spending_level,0.10857670359180609,XGBoost
+annual_income,0.10850441916387872,XGBoost
+credit_history_age_in_month,0.10632989871201456,XGBoost
+total_emi_per_month,0.10020437736443062,XGBoost
+num_credit_inquiries,0.09968114399235353,XGBoost
+changed_credit_limit,0.09874235624571083,XGBoost
+num_of_delayed_payment,0.07374297820493472,XGBoost
+num_of_loan,0.0730685200698789,XGBoost
+monthly_balance,0.07010397256489058,XGBoost
+payment_size,0.06348398594976103,XGBoost
+num_bank_accounts,0.059065982146038615,XGBoost
+age,0.053422435025566185,XGBoost
+amount_invested_monthly,0.0458291005308976,XGBoost
+payment_of_min_amount,0.04442525546092157,XGBoost
+credit_utilization_ratio,0.02497927144318159,XGBoost
+personal_loan,0.02489633625797627,XGBoost
+auto_loan,0.017914633439685128,XGBoost
+credit_builder_loan,0.0164676240271719,XGBoost
+not_specified,0.015681967847879074,XGBoost
+student_loan,0.01553319632808941,XGBoost
+debt_consolidation_loan,0.012797131085085256,XGBoost
+mortgage_loan,0.010541406198575964,XGBoost
+occupation_Scientist,0.010522867989816616,XGBoost
+payday_loan,0.008901736196383628,XGBoost
+occupation_Accountant,0.008812394143638618,XGBoost
+occupation_Writer,0.008687834027066839,XGBoost
+occupation_Mechanic,0.008553855330818207,XGBoost
+home_equity_loan,0.008260975401592343,XGBoost
+occupation_Journalist,0.007960936643794622,XGBoost
+occupation_Media_Manager,0.007914788017827717,XGBoost
+occupation_Developer,0.006753745886385649,XGBoost
+occupation_Teacher,0.006572021968817163,XGBoost
+occupation_Doctor,0.0060375735680224816,XGBoost
+occupation_Musician,0.005471083708088259,XGBoost
+occupation_Lawyer,0.0053327824977835855,XGBoost
+occupation_Manager,0.00506968913673906,XGBoost
+occupation_Engineer,0.004675821244531807,XGBoost
+occupation_Entrepreneur,0.004529677835922543,XGBoost
+occupation_Architect,0.0029306337442044357,XGBoost
+month,1.6240330784880914,MLP
+credit_mix,1.2715813837990213,MLP
+outstanding_debt,0.48111203950468245,MLP
+interest_rate,0.4613965463357046,MLP
+num_of_loan,0.30259193021230485,MLP
+payment_of_min_amount,0.2732156629380704,MLP
+changed_credit_limit,0.2688499199879172,MLP
+credit_history_age_in_month,0.2660729933485167,MLP
+delay_from_due_date,0.2472818738594619,MLP
+spending_level,0.22760139610363983,MLP
+num_of_delayed_payment,0.2188708288451668,MLP
+occupation_Writer,0.20771456586393314,MLP
+num_credit_card,0.19581917133682594,MLP
+num_credit_inquiries,0.18106492109532524,MLP
+occupation_Manager,0.17396262962830222,MLP
+personal_loan,0.17198663429085534,MLP
+occupation_Architect,0.16938648272382464,MLP
+payday_loan,0.1691055858597352,MLP
+occupation_Scientist,0.1670960749539469,MLP
+not_specified,0.15844102759565473,MLP
+num_bank_accounts,0.15704423545585838,MLP
+monthly_inhand_salary,0.14979650619921914,MLP
+credit_builder_loan,0.14821348989448271,MLP
+occupation_Entrepreneur,0.14810159853650562,MLP
+age,0.1389489581979074,MLP
+student_loan,0.13807433087444115,MLP
+monthly_balance,0.1357409310888979,MLP
+mortgage_loan,0.1310681284738318,MLP
+occupation_Engineer,0.12944473184177369,MLP
+occupation_Musician,0.12893958004014858,MLP
+home_equity_loan,0.12835957801160636,MLP
+debt_consolidation_loan,0.1233129651285938,MLP
+occupation_Journalist,0.1205494861906243,MLP
+occupation_Teacher,0.11870291224492548,MLP
+occupation_Developer,0.1154362747881616,MLP
+occupation_Doctor,0.11351144359527152,MLP
+occupation_Media_Manager,0.1092882562439817,MLP
+auto_loan,0.10600416686826647,MLP
+occupation_Lawyer,0.10050371050122178,MLP
+occupation_Accountant,0.10047116727298969,MLP
+occupation_Mechanic,0.09532207867831033,MLP
+payment_size,0.07844402225880212,MLP
+amount_invested_monthly,0.07279052121466739,MLP
+annual_income,0.058354576749689795,MLP
+credit_utilization_ratio,0.04214042786118353,MLP
+total_emi_per_month,0.014822525417173762,MLP
+outstanding_debt,0.5292483940394244,Transformer
+month,0.5196856270633852,Transformer
+interest_rate,0.38692509431454886,Transformer
+monthly_inhand_salary,0.33729735750250284,Transformer
+credit_mix,0.3148501354536541,Transformer
+credit_history_age_in_month,0.2929523191506138,Transformer
+age,0.27798047273774534,Transformer
+delay_from_due_date,0.25945106620225694,Transformer
+num_credit_card,0.24047017032620827,Transformer
+num_of_delayed_payment,0.23751280160815133,Transformer
+num_credit_inquiries,0.2285874223338572,Transformer
+num_bank_accounts,0.21068698940119757,Transformer
+monthly_balance,0.2006122620664673,Transformer
+amount_invested_monthly,0.18445719268961333,Transformer
+changed_credit_limit,0.17652565014590824,Transformer
+occupation_Architect,0.167967425984218,Transformer
+num_of_loan,0.1405149001790728,Transformer
+home_equity_loan,0.12914837702574786,Transformer
+payment_size,0.11563224202863968,Transformer
+spending_level,0.11322156518840173,Transformer
+personal_loan,0.11099011370570747,Transformer
+auto_loan,0.10411449499820642,Transformer
+occupation_Writer,0.09678562294463752,Transformer
+student_loan,0.08573183686692247,Transformer
+not_specified,0.08314559562042226,Transformer
+credit_builder_loan,0.07336114415958452,Transformer
+credit_utilization_ratio,0.06876865568464148,Transformer
+debt_consolidation_loan,0.06766047694049764,Transformer
+occupation_Developer,0.06278681638201064,Transformer
+occupation_Engineer,0.06062352608038858,Transformer
+occupation_Entrepreneur,0.0591938562844871,Transformer
+payment_of_min_amount,0.05127663024035516,Transformer
+occupation_Doctor,0.049915150363104004,Transformer
+occupation_Accountant,0.0496748855301016,Transformer
+payday_loan,0.046770316409011664,Transformer
+occupation_Lawyer,0.043011827912764033,Transformer
+occupation_Manager,0.03976559870701899,Transformer
+occupation_Teacher,0.038474053972782744,Transformer
+occupation_Journalist,0.037086724663532585,Transformer
+mortgage_loan,0.03639407385010671,Transformer
+occupation_Scientist,0.033962831951768434,Transformer
+occupation_Musician,0.03359179029961191,Transformer
+occupation_Mechanic,0.028599176213068022,Transformer
+occupation_Media_Manager,0.02597664137576736,Transformer
+total_emi_per_month,0.019629427597492134,Transformer
+annual_income,0.009925928821784339,Transformer
+credit_mix,2.8665673509841323,TabTransformer
+month,2.6127641023564596,TabTransformer
+outstanding_debt,1.6049662938609937,TabTransformer
+delay_from_due_date,1.2773452598734683,TabTransformer
+interest_rate,1.0498111645694208,TabTransformer
+spending_level,0.5829664473995391,TabTransformer
+monthly_balance,0.4574362620734365,TabTransformer
+num_credit_inquiries,0.42402906485638137,TabTransformer
+num_credit_card,0.41099692150254424,TabTransformer
+changed_credit_limit,0.3772983581129324,TabTransformer
+num_of_delayed_payment,0.3209036457426323,TabTransformer
+num_bank_accounts,0.31268331682206774,TabTransformer
+credit_history_age_in_month,0.24574837969479213,TabTransformer
+payment_size,0.23215538120641158,TabTransformer
+personal_loan,0.21519506831183813,TabTransformer
+age,0.19430759076228482,TabTransformer
+payday_loan,0.17432981779977363,TabTransformer
+num_of_loan,0.17168306552588408,TabTransformer
+credit_builder_loan,0.15378415896301736,TabTransformer
+not_specified,0.1505667021318358,TabTransformer
+monthly_inhand_salary,0.14549273224312212,TabTransformer
+payment_of_min_amount,0.13833287177449638,TabTransformer
+auto_loan,0.13283972240613354,TabTransformer
+student_loan,0.1194299420909119,TabTransformer
+debt_consolidation_loan,0.10697725019073584,TabTransformer
+home_equity_loan,0.0964032295147395,TabTransformer
+mortgage_loan,0.09518039069472795,TabTransformer
+occupation_Doctor,0.07800106284676443,TabTransformer
+occupation_Mechanic,0.07731897427608364,TabTransformer
+amount_invested_monthly,0.07046964005722124,TabTransformer
+occupation_Developer,0.0642626409506493,TabTransformer
+occupation_Writer,0.06113378870691676,TabTransformer
+occupation_Teacher,0.05582013100923713,TabTransformer
+occupation_Lawyer,0.05394297491094322,TabTransformer
+occupation_Media_Manager,0.05093620632286911,TabTransformer
+occupation_Accountant,0.047873662093883385,TabTransformer
+occupation_Journalist,0.04764945763554775,TabTransformer
+occupation_Musician,0.046055026094343324,TabTransformer
+credit_utilization_ratio,0.043714301047796646,TabTransformer
+occupation_Manager,0.03730889136046344,TabTransformer
+occupation_Engineer,0.03437919538409432,TabTransformer
+occupation_Architect,0.033698216672247545,TabTransformer
+total_emi_per_month,0.03281231936393082,TabTransformer
+occupation_Entrepreneur,0.030474591481439783,TabTransformer
+occupation_Scientist,0.02945290740635477,TabTransformer
+annual_income,0.006570991617689374,TabTransformer
+credit_mix,0.8541434869784131,FTTransformer
+month,0.7428600947632649,FTTransformer
+outstanding_debt,0.503431566194858,FTTransformer
+interest_rate,0.39645159226965915,FTTransformer
+delay_from_due_date,0.3084790385577926,FTTransformer
+num_credit_card,0.1927825731581849,FTTransformer
+spending_level,0.18700569678587967,FTTransformer
+credit_history_age_in_month,0.16713924116574885,FTTransformer
+monthly_inhand_salary,0.1269327969446935,FTTransformer
+num_bank_accounts,0.12606852035933733,FTTransformer
+changed_credit_limit,0.11948511043300633,FTTransformer
+num_credit_inquiries,0.10403962738357125,FTTransformer
+payment_of_min_amount,0.061621501111413984,FTTransformer
+num_of_delayed_payment,0.054270415771300276,FTTransformer
+amount_invested_monthly,0.052914477526214664,FTTransformer
+payment_size,0.05220894643888892,FTTransformer
+num_of_loan,0.05128675734292646,FTTransformer
+credit_builder_loan,0.049911424268462984,FTTransformer
+age,0.03930534189572536,FTTransformer
+personal_loan,0.03178874571994893,FTTransformer
+home_equity_loan,0.03163929129075979,FTTransformer
+monthly_balance,0.027365453225253168,FTTransformer
+debt_consolidation_loan,0.018310099110597805,FTTransformer
+occupation_Scientist,0.014674075067221057,FTTransformer
+occupation_Mechanic,0.014352851116208216,FTTransformer
+payday_loan,0.014075988378930818,FTTransformer
+student_loan,0.01320664926916002,FTTransformer
+occupation_Lawyer,0.012126275105197934,FTTransformer
+occupation_Media_Manager,0.011001364998022388,FTTransformer
+occupation_Journalist,0.010089219394440704,FTTransformer
+not_specified,0.009704305473743844,FTTransformer
+mortgage_loan,0.009650661205762157,FTTransformer
+occupation_Architect,0.009429409304718715,FTTransformer
+occupation_Doctor,0.009029517551465995,FTTransformer
+occupation_Developer,0.008411296983741132,FTTransformer
+occupation_Entrepreneur,0.006168113815653529,FTTransformer
+auto_loan,0.005466339238541935,FTTransformer
+occupation_Writer,0.005428281036978805,FTTransformer
+occupation_Musician,0.004664609311240684,FTTransformer
+occupation_Engineer,0.004205683214908109,FTTransformer
+occupation_Accountant,0.003321824931423613,FTTransformer
+occupation_Teacher,0.00284750259214585,FTTransformer
+occupation_Manager,0.0026117405689698703,FTTransformer
+total_emi_per_month,0.0016317975053926938,FTTransformer
+credit_utilization_ratio,0.0015898579114689314,FTTransformer
+annual_income,0.00019471168406011508,FTTransformer
